@@ -42,6 +42,9 @@ ggplot(totalsteps, aes(x=steps)) +
   geom_text(aes(x=meansteps, label = "Mean/Median", y = 8), angle = 90, vjust = 1.2) +
   ggtitle("Figure 1: Distribution of total number of steps taken each day") +
   labs(x = "Total number of steps taken per day", y = "Frequency")
+
+dev.copy(png, './figure/plot1.png', width = 480, height = 480)
+dev.off()
 ``` 
 The mean number of steps per day is `r meansteps` and the median number of steps per day is `r mediansteps`.
 
@@ -60,6 +63,9 @@ ggplot(avg, aes(x=interval, y=steps)) +
   geom_text(data = maxpoint, aes(x=interval, y = steps, label = paste0("Maximum (",interval,",",round(steps,0),")"))) +
   ggtitle("Figure 2: Average daily activity across time intervals") +
   labs(x = "Interval", y = "Average daily activity (no. of steps)")
+
+dev.copy(png, './figure/plot2.png', width = 480, height = 480)
+dev.off()
 ```
 The maximum number of steps is contained within the `r maxpoint$interval` interval.
 
@@ -99,6 +105,9 @@ ggplot(totalsteps2, aes(x=steps)) +
   geom_text(aes(x=meansteps2, label = "Mean/Median", y = 8), angle = 90, vjust = 1.2) +
   ggtitle("Figure 3: Distribution of total number of steps taken each day") +
   labs(x = "Total number of steps taken per day", y = "Frequency")
+
+dev.copy(png, './figure/plot3.png', width = 480, height = 480)
+dev.off()
 ```
 The updated mean number of steps per day is `r meansteps2` and the median number of steps per day is `r mediansteps2`, which remains generally unchanged as our imputation method applies the mean value and therefore preserves the overall mean.
 
@@ -119,5 +128,8 @@ ggplot(avgbydayofweek, aes(x=interval, y=steps)) +
   facet_grid(weekdayindicator~.) +
   ggtitle("Figure 4: Average daily activity across time intervals") +
   labs(x = "Interval", y = "Average daily activity (no. of steps)")
+
+dev.copy(png, './figure/plot4.png', width = 480, height = 480)
+dev.off()
 ```
 There is a higher peak in activity during the weekdays than weekends. However, during the weekends, activity seems to be generally higher across the day.
