@@ -54,24 +54,6 @@ ggplot(totalsteps, aes(x=steps)) +
 ```
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
-
-```r
-dev.copy(png, './figure/plot1.png', width = 480, height = 480)
-```
-
-```
-## png 
-##   3
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
 The mean number of steps per day is 10766 and the median number of steps per day is 10765.
 
 ## What is the average daily activity pattern?
@@ -93,24 +75,6 @@ ggplot(avg, aes(x=interval, y=steps)) +
 ```
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
-
-```r
-dev.copy(png, './figure/plot2.png', width = 480, height = 480)
-```
-
-```
-## png 
-##   3
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
 The maximum number of steps is contained within the 835 interval.
 
 ## Imputing missing values
@@ -159,24 +123,6 @@ ggplot(totalsteps2, aes(x=steps)) +
 ```
 
 ![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
-
-```r
-dev.copy(png, './figure/plot3.png', width = 480, height = 480)
-```
-
-```
-## png 
-##   3
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
 The updated mean number of steps per day is 10766 and the median number of steps per day is 10766, which remains generally unchanged as our imputation method applies the mean value and therefore preserves the overall mean.
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -199,22 +145,4 @@ ggplot(avgbydayofweek, aes(x=interval, y=steps)) +
 ```
 
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
-
-```r
-dev.copy(png, './figure/plot4.png', width = 480, height = 480)
-```
-
-```
-## png 
-##   3
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
 There is a higher peak in activity during the weekdays than weekends. However, during the weekends, activity seems to be generally higher across the day.
